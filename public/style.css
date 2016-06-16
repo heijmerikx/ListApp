@@ -1,5 +1,9 @@
+@font-face {
+  font-family: Refuge;
+  src: url("/Refuge.otf");
+}
 body {
-  font-family: monospace;
+  font-family: Refuge;
   background-color: #00F5FF;
 }
 

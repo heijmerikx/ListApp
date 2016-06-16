@@ -2,9 +2,26 @@ $(document).ready(function() {
   console.log("Hello, World!");
 
   updateList();
-
-  $(document).on("submit","#new-item-form",function(event) {
-    console.log("data: " + data);
+  $("input.new-item").keyup(function(e) {
+    if (e.keyCode == 13) {
+      var newItem = $("input.new-item").val();
+      if (newItem === "") {
+        console.log("no text");
+        return;
+      }
+      //clear textbox
+      $("input.new-item").val("");
+      console.log(JSON.stringify({"item":newItem}));
+      $.post({
+        url:"/list",
+        data:JSON.stringify({"item":newItem}),
+        contentType: "application/json; charset=utf-8",
+        success:updateList,
+        error:function(e) {
+          console.log("error:",e);
+        }
+      })
+    }
   });
 });
 
@@ -21,6 +38,14 @@ $(document).on("click",".remove-list-item",function(event){
       console.log(error);
     }
   });
+});
+
+
+$("input.new-item").keyup(function(e){
+  console.log("key pressed");
+  if (e.keycode == 13) {
+    console.log("enter pressed");
+  }
 });
 
 function updateList() {
