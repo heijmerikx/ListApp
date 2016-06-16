@@ -1,10 +1,10 @@
 @font-face {
-  font-family: Refuge;
-  src: url("/Refuge.otf");
-}
+  font-family: Kreon-light;
+  src: url("/Kreon-Light.ttf");
+ }
 
 body {
-  font-family: Refuge;
+  font-family: Kreon-light;
   background-color: #00F5FF;
 }
 
