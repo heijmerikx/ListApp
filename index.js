@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 
 //get port from arguments
 let port;
-if (process.argv.indexOf("--port") > 0) {
+if (process.argv.indexOf("port") > 0) {
   port = Number(process.argv[process.argv.indexOf("port") + 1]);
 }  else {
   port = 8080;
