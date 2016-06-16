@@ -3,15 +3,12 @@ const fs = require("fs");
 const logger = require("morgan");
 const bodyParser = require("body-parser");
 
-//get port from arguments
+//set port
 let port;
-if (process.argv.indexOf("port") > 0) {
-  port = Number(process.argv[process.argv.indexOf("port") + 1]);
-}  else {
-  port = 8080;
-}
-if (typeof port !== "number") {
-  console.log("bad port");
+try {
+  port = JSON.parse(fs.readFileSync("port.json")).port;
+} catch (e) {
+  console.log("failed to get port from port.json");
   port = 8080;
 }
 
