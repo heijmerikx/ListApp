@@ -1,0 +1,21 @@
+{
+  "name": "webpi",
+  "version": "0.0.1",
+  "description": "test website for raspi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "raspberrypi",
+    "express"
+  ],
+  "author": "Mees van Dijk",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "morgan": "^1.7.0"
+  }
+}
