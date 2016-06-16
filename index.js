@@ -3,6 +3,18 @@ const fs = require("fs");
 const logger = require("morgan");
 const bodyParser = require("body-parser");
 
+//get port from arguments
+let port;
+if (process.argv.indexOf("--port") > 0) {
+  port = Number(process.argv[process.argv.indexOf("port") + 1]);
+}  else {
+  port = 8080;
+}
+if (typeof port !== "number") {
+  console.log("bad port");
+  port = 8080;
+}
+
 //initialize app
 const app = express();
 
@@ -47,8 +59,8 @@ app.delete("/list/:id",(request,response) => {
 });
 
 //start server
-app.listen(process.env.PORT, () => {
-  console.log("started listening on port " + process.env.PORT);
+app.listen(port, () => {
+  console.log("started listening on port " + port);
 });
 
 //util
