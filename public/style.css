@@ -2,6 +2,7 @@
   font-family: Refuge;
   src: url("/Refuge.otf");
 }
+
 body {
   font-family: Refuge;
   background-color: #00F5FF;
@@ -26,6 +27,10 @@ footer {
   height: auto;
   width: 100%;
   text-align: center;
+}
+
+.foot {
+  margin: 5px;
 }
 
 div.list-head {
